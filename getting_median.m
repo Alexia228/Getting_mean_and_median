@@ -1,0 +1,3 @@
+function [median] = getting_median(feloop)
+%Пока пустота...
+end

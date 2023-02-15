@@ -1,0 +1,3 @@
+function [mean] = getting_mean(feloop)
+%Пока пустота...
+end
