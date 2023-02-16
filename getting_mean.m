@@ -1,13 +1,11 @@
-function [mean] = getting_mean(Some_feloop)
-    E = Some_feloop.E;
-    P = Some_feloop.P;
-    cla
-    plot(E.p, P.p, '.r')
-    plot(E.n, P.n, '.b')
+function [mean] = getting_mean(Some_feloop) 
+ E = Some_feloop.E.p(1:end/2); 
+ P = Some_feloop.P.p(1:end/2);
+ time = Some_feloop.ref.time.p(1:end/2);
+
+ Current = diff(P)./diff(time)
+ Current(end+1) = Current(end)
+ 
+ mean = sum(Current.*E)/sum(Current);
     
-    xlim([-18 18])
-    ylim([-40 40])
-%     title(['T = ' num2str(Some_feloop.temp) ' °C'], 'FontSize', 18)   
-%     drawnow
-    mean = 6;
 end
