@@ -18,7 +18,10 @@ Temp_out = [];
 k = 0;
 file_number = 20
 feloop = open_dwm_fe_loop(Sample, folder, file_number, 'align');
-[mean] = getting_mean(feloop) 
+
+[Current] = current_from_charge(feloop)
+[mean] = getting_mean(Current) 
+
 %%
 x = [-30:0.1:30];
 y = 30*normpdf(x,10)
