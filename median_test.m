@@ -1,4 +1,5 @@
-
+clc
+clear
 RND = @(l, u) rand(1)*(u-l) + l;
 
 clc
@@ -23,13 +24,15 @@ y2 = k2*(x2 - mid_point);
 
 x = [x1 x2];
 y = [y1 y2] + 0.0;
-
+y_shift = y - min(y)
+y_med = (max(y) - min(y)) * 0.5
+median = interp1(y_shift, x, y_med)
 clearvars x1 x2 y1 y2
 
 
-plot(x, y)
+plot(x, y_shift)
 hold on
-plot(mid_point, 0, 'x')
+plot(mid_point, - min(y), 'x')
 
 
 loop.E.p = x;
@@ -38,15 +41,10 @@ loop.I = y;
 
 med = getting_median(loop);
 
-xline(med)
+xline(med,'ro')
+% yline(y_med,'go')
+% xline(median,'go')
 
-
-getting_mean(loop)
-
-y2 = y;
-y2 = y2 - min(y2);
-
-sum(y2.*x)/sum(y2)
 
 
 
