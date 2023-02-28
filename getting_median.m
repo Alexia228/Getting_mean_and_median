@@ -6,7 +6,9 @@
 % 2. Проверить, что после первого пункта в E.p осталось больше одного элемента
 % 
 
-function [median] = getting_median(some_feloop)
+%FIXME: replace by getting_percentile(some_feloop, 0.5)
+
+function median = getting_median(some_feloop)
  E = some_feloop.E.p;
  P = some_feloop.P;
  

@@ -40,8 +40,12 @@ loop.P.p = y;
 loop.I = y;
 
 med = getting_median(loop);
+xline(med, 'r')
 
-xline(med,'ro')
+pr_v = 0.1;
+prcn = getting_percentile(loop, pr_v)
+xline(prcn, 'r')
+
 % yline(y_med,'go')
 % xline(median,'go')
 
