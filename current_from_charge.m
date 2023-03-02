@@ -6,8 +6,8 @@ function [Current] = current_from_charge(Some_feloop)
  time = Some_feloop.ref.time.p(1:end/2);
  Current.I = diff(P)./diff(time);
  Current.I(end+1) = Current.I(end)
- Current.E = E; %Только E.p
- Current.P = P; %Только P.p
+ Current.E.p = E; %Только E.p
+ Current.P.p = P; %Только P.p
  Current.time = time
  
 end 

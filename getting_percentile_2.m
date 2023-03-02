@@ -1,8 +1,11 @@
 function out = getting_percentile_2(some_feloop, Prcn)
+%На вход прилетает петля и Prcn - процентиль от 0 до 1
+%
+%
+%
 if Prcn > 1 || Prcn < 0
     error(' 0 <= Prcn <= 1')
 end
-
 
 E = some_feloop.E.p;
 P = some_feloop.P.p;
