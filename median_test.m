@@ -1,7 +1,7 @@
-
+clc
+clear
 RND = @(l, u) rand(1)*(u-l) + l;
 
-clc
 
 %  Create test E-P uniform
 start = 0;
@@ -23,13 +23,21 @@ y2 = k2*(x2 - mid_point);
 
 x = [x1 x2];
 y = [y1 y2] + 0.0;
+mid_shift = -min(y);
+y = y - min(y)
+
+p = 1/2;
+
+y_m = max(y)*p;
+% y = y - y_m
 
 clearvars x1 x2 y1 y2
 
 
 plot(x, y)
 hold on
-plot(mid_point, 0, 'x')
+plot(mid_point, mid_shift , 'x')
+yline(y_m)
 
 
 loop.E.p = x;
@@ -38,7 +46,7 @@ loop.I = y;
 
 med = getting_median(loop);
 
-xline(med)
+yline(med)
 
 
 getting_mean(loop)
